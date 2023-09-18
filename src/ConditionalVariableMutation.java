@@ -16,11 +16,25 @@ public class ConditionalVariableMutation {
         else if(b < 10) System.out.println("Less!");
         else System.out.println("More!");
 
-        int c;
+        int credits;
         boolean isBonus;
+        int output3 = 0;
         do {
-            c = scn.nextInt();
+            credits = scn.nextInt();
             isBonus = scn.nextBoolean();
-        } while (c < 0 || c > 100);
+        } while (credits < 0 || credits > 100);
+        if(credits >= 50 && !isBonus) output3 +=3;
+        else if (!isBonus) output3 -= 1;
+        System.out.println(output3);
+
+        int d;
+        int time;
+        do {
+            d = scn.nextInt();
+            time = scn.nextInt();
+        } while ((d < 0 || d > 50) || (time < 0 || time > 500));
+        if(d % 4 == 0 && time <= 200) System.out.println("check!");
+        else if(time > 200) System.out.println("Time out!");
+        else System.out.println("Run forest run!");
     }
 }
